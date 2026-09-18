@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Disease Detection | Smart Crop AI</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🌱
+            </div>
+
+            <div>
+                <h2>Smart Crop</h2>
+                <span>AI Agriculture</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+            <a href="index.html" class="nav-link">
+                <span>📊</span>
+                Dashboard
+            </a>
+
+            <a href="crop-recommendation.html"
+               class="nav-link">
+                <span>🌾</span>
+                Crop Recommendation
+            </a>
+
+            <a href="disease-detection.html"
+               class="nav-link active">
+                <span>🔬</span>
+                Disease Detection
+            </a>
+
+            <a href="yield-prediction.html"
+               class="nav-link">
+                <span>📈</span>
+                Yield Prediction
+            </a>
+
+            <a href="history.html"
+               class="nav-link">
+                <span>🕘</span>
+                Prediction History
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="ai-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>AI System Online</strong>
+                    <small>Ready for prediction</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <button class="menu-btn"
+                    onclick="toggleSidebar()">
+                ☰
+            </button>
+
+            <div class="topbar-title">
+                Disease Detection
+            </div>
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+                    SC
+                </div>
+
+                <div>
+                    <strong>Smart Farmer</strong>
+                    <small>AI Dashboard</small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="page">
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="section-label">
+                        AI PLANT HEALTH
+                    </span>
+
+                    <h1>
+                        Detect Crop Diseases
+                    </h1>
+
+                    <p>
+                        Upload a clear crop leaf image and let
+                        the AI model identify possible diseases.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="prediction-layout">
+
+                <div class="form-card">
+
+                    <div class="card-header">
+
+                        <div class="card-header-icon">
+                            🔬
+                        </div>
+
+                        <div>
+
+                            <h2>Leaf Analysis</h2>
+
+                            <p>
+                                Upload crop image
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="diseaseForm">
+
+                        <div class="form-group">
+
+                            <label>
+                                Select Crop
+                            </label>
+
+                            <select id="cropType" required>
+
+                                <option value="">
+                                    Select crop
+                                </option>
+
+                                <option value="Tomato">
+                                    Tomato
+                                </option>
+
+                                <option value="Potato">
+                                    Potato
+                                </option>
+
+                                <option value="Corn">
+                                    Corn
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="upload-area"
+                             id="uploadArea">
+
+                            <input
+                                type="file"
+                                id="leafImage"
+                                accept="image/*"
+                                hidden
+                                required
+                            >
+
+                            <div
+                                class="upload-icon">
+                                📷
+                            </div>
+
+                            <h3>
+                                Upload Leaf Image
+                            </h3>
+
+                            <p>
+                                Drag & drop or click to browse
+                            </p>
+
+                            <span>
+                                JPG, JPEG or PNG
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="image-preview-container"
+                            id="imagePreviewContainer"
+                            style="display:none;">
+
+                            <img
+                                id="imagePreview"
+                                alt="Leaf Preview"
+                            >
+
+                            <button
+                                type="button"
+                                class="remove-image"
+                                id="removeImage">
+
+                                ×
+
+                            </button>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary btn-large"
+                            id="diseaseButton">
+
+                            🔬 Analyze Leaf
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <div class="result-card"
+                     id="diseaseResult">
+
+                    <div class="result-placeholder">
+
+                        <div class="result-placeholder-icon">
+                            🌿
+                        </div>
+
+                        <h3>
+                            Disease Analysis
+                        </h3>
+
+                        <p>
+                            Upload a crop leaf image to
+                            start AI disease detection.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<div id="toast" class="toast"></div>
+
+<script src="js/app.js"></script>
+<script src="js/disease.js"></script>
+
+</body>
+</html>

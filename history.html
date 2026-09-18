@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>History | Smart Crop AI</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🌱
+            </div>
+
+            <div>
+                <h2>Smart Crop</h2>
+                <span>AI Agriculture</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+            <a href="index.html" class="nav-link">
+                <span>📊</span>
+                Dashboard
+            </a>
+
+            <a href="crop-recommendation.html"
+               class="nav-link">
+
+                <span>🌾</span>
+                Crop Recommendation
+
+            </a>
+
+            <a href="disease-detection.html"
+               class="nav-link">
+
+                <span>🔬</span>
+                Disease Detection
+
+            </a>
+
+            <a href="yield-prediction.html"
+               class="nav-link">
+
+                <span>📈</span>
+                Yield Prediction
+
+            </a>
+
+            <a href="history.html"
+               class="nav-link active">
+
+                <span>🕘</span>
+                Prediction History
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="ai-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>AI System Online</strong>
+                    <small>Ready for prediction</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <button class="menu-btn"
+                    onclick="toggleSidebar()">
+                ☰
+            </button>
+
+            <div class="topbar-title">
+                Prediction History
+            </div>
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+                    SC
+                </div>
+
+                <div>
+                    <strong>Smart Farmer</strong>
+                    <small>AI Dashboard</small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="page">
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="section-label">
+                        ACTIVITY
+                    </span>
+
+                    <h1>
+                        Prediction History
+                    </h1>
+
+                    <p>
+                        View previous AI analysis results.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-card">
+
+                <div class="table-header">
+
+                    <div>
+
+                        <h2>
+                            Recent Predictions
+                        </h2>
+
+                        <p>
+                            AI analysis records
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="btn btn-outline"
+                        onclick="loadHistory()">
+
+                        ↻ Refresh
+
+                    </button>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Type</th>
+                                <th>Input</th>
+                                <th>Result</th>
+                                <th>Date</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="historyTable">
+
+                            <tr>
+
+                                <td colspan="4"
+                                    class="loading-cell">
+
+                                    Loading history...
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<div id="toast" class="toast"></div>
+
+<script src="js/app.js"></script>
+<script src="js/history.js"></script>
+
+</body>
+</html>

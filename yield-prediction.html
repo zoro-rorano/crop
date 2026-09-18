@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Yield Prediction | Smart Crop AI</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🌱
+            </div>
+
+            <div>
+                <h2>Smart Crop</h2>
+                <span>AI Agriculture</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+            <a href="index.html" class="nav-link">
+                <span>📊</span>
+                Dashboard
+            </a>
+
+            <a href="crop-recommendation.html"
+               class="nav-link">
+
+                <span>🌾</span>
+                Crop Recommendation
+
+            </a>
+
+            <a href="disease-detection.html"
+               class="nav-link">
+
+                <span>🔬</span>
+                Disease Detection
+
+            </a>
+
+            <a href="yield-prediction.html"
+               class="nav-link active">
+
+                <span>📈</span>
+                Yield Prediction
+
+            </a>
+
+            <a href="history.html"
+               class="nav-link">
+
+                <span>🕘</span>
+                Prediction History
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="ai-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>AI System Online</strong>
+                    <small>Ready for prediction</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <button class="menu-btn"
+                    onclick="toggleSidebar()">
+                ☰
+            </button>
+
+            <div class="topbar-title">
+                Yield Prediction
+            </div>
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+                    SC
+                </div>
+
+                <div>
+                    <strong>Smart Farmer</strong>
+                    <small>AI Dashboard</small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="page">
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="section-label">
+                        AI YIELD FORECAST
+                    </span>
+
+                    <h1>
+                        Predict Crop Yield
+                    </h1>
+
+                    <p>
+                        Estimate expected production using crop,
+                        area and environmental conditions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="prediction-layout">
+
+                <div class="form-card">
+
+                    <div class="card-header">
+
+                        <div class="card-header-icon">
+                            📈
+                        </div>
+
+                        <div>
+
+                            <h2>Farm Information</h2>
+
+                            <p>
+                                Enter crop and field conditions
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="yieldForm">
+
+                        <div class="form-grid">
+
+                            <div class="form-group full">
+
+                                <label>
+                                    Crop Type
+                                </label>
+
+                                <select
+                                    id="yieldCrop"
+                                    required>
+
+                                    <option value="">
+                                        Select crop
+                                    </option>
+
+                                    <option value="Rice">
+                                        Rice
+                                    </option>
+
+                                    <option value="Wheat">
+                                        Wheat
+                                    </option>
+
+                                    <option value="Maize">
+                                        Maize
+                                    </option>
+
+                                    <option value="Cotton">
+                                        Cotton
+                                    </option>
+
+                                    <option value="Tomato">
+                                        Tomato
+                                    </option>
+
+                                    <option value="Potato">
+                                        Potato
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Area (hectares)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="area"
+                                    placeholder="e.g. 2.5"
+                                    min="0"
+                                    step="0.1"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Rainfall (mm)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="yieldRainfall"
+                                    placeholder="e.g. 150"
+                                    min="0"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Temperature (°C)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="yieldTemperature"
+                                    placeholder="e.g. 27"
+                                    step="0.1"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Humidity (%)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="yieldHumidity"
+                                    placeholder="e.g. 68"
+                                    min="0"
+                                    max="100"
+                                    step="0.1"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary btn-large"
+                            id="yieldButton">
+
+                            📈 Predict Yield
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <div class="result-card"
+                     id="yieldResult">
+
+                    <div class="result-placeholder">
+
+                        <div class="result-placeholder-icon">
+                            📊
+                        </div>
+
+                        <h3>
+                            Expected Yield
+                        </h3>
+
+                        <p>
+                            Enter your farm information to
+                            generate an AI yield forecast.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<div id="toast" class="toast"></div>
+
+<script src="js/app.js"></script>
+<script src="js/yield.js"></script>
+
+</body>
+</html>
